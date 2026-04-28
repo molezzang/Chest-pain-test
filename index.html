@@ -51,14 +51,6 @@
     }
     .logo-text { font-size: 14px; font-weight: 700; color: var(--text-primary); }
     .logo-text span { color: var(--accent); }
-    .header-cafe-btn {
-      display: flex; align-items: center; gap: 6px;
-      background: rgba(61,214,140,0.1); border: 1px solid rgba(61,214,140,0.3);
-      color: var(--accent); padding: 8px 14px; border-radius: 20px;
-      font-size: 12px; font-weight: 500; text-decoration: none;
-      transition: all 0.2s; font-family: 'Noto Sans KR', sans-serif; white-space: nowrap;
-    }
-    .header-cafe-btn:hover { background: rgba(61,214,140,0.2); }
 
     /* DISCLAIMER BOX */
     .disclaimer {
@@ -113,27 +105,6 @@
     }
     .start-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 44px rgba(61,214,140,0.42); }
     .start-btn::after { content: '→'; font-size: 17px; }
-
-    /* CAFE PROMO */
-    .cafe-promo-hero {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: 16px; padding: 22px 24px;
-      display: flex; align-items: center; gap: 16px; text-align: left;
-      margin-bottom: 28px; transition: border-color 0.2s; text-decoration: none;
-    }
-    .cafe-promo-hero:hover { border-color: rgba(61,214,140,0.3); }
-    .cafe-icon {
-      width: 48px; height: 48px; flex-shrink: 0;
-      background: rgba(61,214,140,0.1); border: 1px solid rgba(61,214,140,0.2);
-      border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px;
-    }
-    .cafe-text-wrap p.label {
-      font-size: 10px; font-weight: 700; letter-spacing: 1.5px;
-      color: var(--accent); text-transform: uppercase; margin-bottom: 4px;
-    }
-    .cafe-text-wrap h3 { font-size: 13.5px; font-weight: 700; color: var(--text-primary); margin-bottom: 4px; }
-    .cafe-text-wrap p.desc { font-size: 12px; color: var(--text-secondary); font-weight: 300; line-height: 1.5; }
-    .cafe-arrow { margin-left: auto; flex-shrink: 0; color: var(--accent); font-size: 20px; }
 
     /* QUIZ */
     .quiz-wrap { max-width: 680px; margin: 0 auto; padding: 100px 24px 60px; }
@@ -276,13 +247,11 @@
     @media (max-width: 480px) {
       header { padding: 12px 16px; }
       .logo-text { font-size: 12px; }
-      .header-cafe-btn { font-size: 11px; padding: 7px 11px; }
       .hero { padding: 90px 16px 48px; }
       .quiz-wrap, .result-wrap { padding: 86px 16px 50px; }
       .question-card { padding: 24px 18px; }
       .result-card-header, .result-card-body { padding: 20px 18px; }
       .action-row { flex-direction: column; }
-      .cafe-promo-hero { gap: 12px; }
       .cafe-result-promo { padding: 22px 18px; }
     }
   </style>
@@ -293,13 +262,10 @@
 <header>
   <div class="logo" onclick="resetAll()">
     <div class="logo-icon" style="background: none;">
-  <img src="logo.jpg" style="width: 100%; height: 100%; object-fit: contain;">
-</div>
+      <img src="logo.jpg" style="width: 100%; height: 100%; object-fit: contain;">
+    </div>
     <div class="logo-text">튼튼<span>혈관연구소</span></div>
   </div>
-  <a href="https://cafe.naver.com/cardiovascularlab" target="_blank" class="header-cafe-btn">
-    💬 카페 바로가기
-  </a>
 </header>
 
 <!-- ══ HERO ══ -->
@@ -311,7 +277,6 @@
       심혈관·위장관·근골격계·심리적 원인 중 어디에 해당하는지 확인해보세요.
     </p>
 
-    <!-- ✅ 시작 전 면책 고지 -->
     <div class="disclaimer" style="margin-bottom: 22px;">
       <strong>📋 테스트 시작 전 반드시 읽어주세요</strong><br>
       이 테스트는 <strong>일반적인 증상 패턴</strong>을 바탕으로 한 정보 제공용 콘텐츠입니다.<br>
@@ -330,15 +295,6 @@
 
     <button class="start-btn" onclick="startTest()">지금 바로 테스트하기</button>
 
-    <a href="https://cafe.naver.com/cardiovascularlab" target="_blank" class="cafe-promo-hero">
-      <div class="cafe-icon">💬</div>
-      <div class="cafe-text-wrap">
-        <p class="label">Community</p>
-        <h3>심뇌혈관센터 17년차 직원과 함께하는 소통방</h3>
-        <p class="desc">혼자 걱정하지 마세요. 같은 경험을 가진 환우들과 함께해요.</p>
-      </div>
-      <span class="cafe-arrow">›</span>
-    </a>
   </section>
 </div>
 
@@ -397,7 +353,6 @@
       <button class="restart-btn" onclick="resetAll()">↺ 다시 테스트하기</button>
     </div>
 
-    <!-- ✅ 결과 하단 면책 고지 -->
     <div class="disclaimer">
       <strong>⚕️ 중요 안내</strong><br>
       이 결과는 <strong>일반적인 증상 정보</strong>를 바탕으로 한 것으로, <strong>의학적 진단이 아닙니다.</strong><br>
@@ -413,7 +368,6 @@
     🫀 튼튼혈관연구소 · TUNTUN VESSEL LAB
   </a>
   <p>
-    심뇌혈관센터 17년차 직원과 함께하는 소통방<br>
     이 테스트는 정보 제공 목적으로 제작되었으며, 의학적 진단을 대신할 수 없습니다.
   </p>
 </footer>
@@ -625,8 +579,6 @@
     });
   }
 
-  /* 카카오 SDK 초기화 — 배포 후 본인 JavaScript 앱 키로 교체하세요 */
-  /* https://developers.kakao.com 에서 앱 생성 후 키 발급 */
   try {
     if (typeof Kakao !== 'undefined') Kakao.init('de1369a2ca3efe77617d135629642eb4');
   } catch(e) {}
